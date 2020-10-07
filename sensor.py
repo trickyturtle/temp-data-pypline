@@ -19,15 +19,12 @@ LOG_MAX=200
 SLEEP_TIME=1
 
 def getTemp():
-    minVal=-50
-    maxVal=150
-    scaledVal = minVal + (random.random() * (maxVal - minVal))
-    return scaledVal
+    return random.randint(-100,500)
 
 def getTempData():
     #technically there is a chance of an id collision here, but it is very small
     guid = str(uuid.uuid4())
-    isoTime = datetime.datetime.now().isoformat()
+    isoTime = datetime.datetime.now().replace(microsecond=0).isoformat()
     fTemp=getTemp()
 
     return {"id" : guid, 

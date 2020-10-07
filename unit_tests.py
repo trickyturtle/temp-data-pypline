@@ -24,7 +24,7 @@ class TestTempDataPipeline(unittest.TestCase):
 
     #Test that sensor returns a float temp
     def test_getTemp(self):
-        self.assertTrue(isinstance(sensor.getTemp(), float))
+        self.assertTrue(isinstance(sensor.getTemp(), int))
 
     #Test that sensor.getTempData returns a dict with the correct fields
     def test_getTempData(self):
@@ -40,7 +40,7 @@ class TestTempDataPipeline(unittest.TestCase):
         self.assertTrue(tempData["type"]=="sensor")
         self.assertTrue("temperature_f" in tempData["content"])
         self.assertTrue("time_of_measurement" in tempData["content"])
-        self.assertTrue(isinstance(tempData["content"]["temperature_f"], float))
+        self.assertTrue(isinstance(tempData["content"]["temperature_f"], int))
         self.assertTrue(isinstance(tempData["content"]["time_of_measurement"], str))
         self.assertRegex( tempData["content"]["time_of_measurement"],
                          '\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d')
@@ -69,7 +69,7 @@ class TestTempDataPipeline(unittest.TestCase):
             self.assertTrue(log["type"]=="sensor")
             self.assertTrue("temperature_f" in log["content"])
             self.assertTrue("time_of_measurement" in log["content"])
-            self.assertTrue(isinstance(log["content"]["temperature_f"], float))
+            self.assertTrue(isinstance(log["content"]["temperature_f"], int))
             self.assertTrue(isinstance(log["content"]["time_of_measurement"], str))
             self.assertRegex( log["content"]["time_of_measurement"],
                              '\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d')
