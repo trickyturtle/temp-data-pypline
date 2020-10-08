@@ -10,6 +10,9 @@ To monitor, I also spun up a pgadmin docker container like so:
 
 2. Sign into pgadmin using the credentials I set and connect it to the postgres docker container
 
+To run the pipeline, just run data_pipeline.py. You can also change its NUM_ENTRIES
+and NUM_PROCESSES variables to experiment with performance. 
+
 Notes:
 1. The logger is not configured, so it isn't as useful as it could be. I typically 
 wait to configure it until I know how it will be used in the larger system.
