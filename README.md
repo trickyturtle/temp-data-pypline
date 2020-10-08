@@ -29,7 +29,11 @@ method would normally be different, I was just trying to improve ease of use for
 3. Without multiprocessing, processing and storing 5000 entries takes ~140.95 seconds.
 
 With multiprocessing:
+
 3 processes = ~41.28
+
 4 processes = ~23.4 seconds
+
 6 processes = ~20.05
+
 8 processes = ~15.33
